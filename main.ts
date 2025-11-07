@@ -28,3 +28,10 @@ class Queue<T> {
     return this.tail - this.head;
   }
 }
+
+const searchQueue = new Queue<number[]>();
+
+function knightMoves(initial: number[], target: number[]): number[][] {
+    searchQueue.enqueue(initial);
+    
+} 
