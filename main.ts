@@ -1,0 +1,30 @@
+class Queue<T> {
+  private items: Record<number, T> = {};
+  private head = 0;
+  private tail = 0;
+
+  enqueue(element: T): void {
+    this.items[this.tail] = element;
+    this.tail++;
+  }
+
+  dequeue(): T | undefined {
+    if (this.isEmpty()) return undefined;
+    const item = this.items[this.head];
+    delete this.items[this.head];
+    this.head++;
+    return item;
+  }
+
+  peek(): T | undefined {
+    return this.items[this.head];
+  }
+
+  isEmpty(): boolean {
+    return this.head === this.tail;
+  }
+
+  size(): number {
+    return this.tail - this.head;
+  }
+}
