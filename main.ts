@@ -29,9 +29,8 @@ class Queue<T> {
   }
 }
 
-const searchQueue = new Queue<number[]>();
-
 function knightMoves(initial: number[], target: number[]): number[][] {
+    const searchQueue = new Queue<number[]>();
     searchQueue.enqueue(initial);
-    
+
 } 
