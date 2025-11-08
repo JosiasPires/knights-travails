@@ -1,3 +1,5 @@
+type Coordinate = [number, number];
+
 class Queue<T> {
   private items: Record<number, T> = {};
   private head = 0;
@@ -29,8 +31,14 @@ class Queue<T> {
   }
 }
 
-function knightMoves(initial: number[], target: number[]): number[][] {
-    const searchQueue = new Queue<number[]>();
-    searchQueue.enqueue(initial);
+function knightMoves(initial: Coordinate, target: Coordinate): Coordinate[] {
+  const moves: Coordinate[] = [
+    [2, 1], [2, -1],
+    [-2, 1], [-2, -1],
+    [1, 2], [1, -2],
+    [-1, 2], [-1, -2]
+  ];
+  const searchQueue = new Queue<number[]>();
+  searchQueue.enqueue(initial);
 
 } 
