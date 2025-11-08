@@ -70,4 +70,5 @@ function knightMoves(initial: Coordinate, target: Coordinate): Coordinate[] {
       });
     }
   }
+  return [];
 } 
