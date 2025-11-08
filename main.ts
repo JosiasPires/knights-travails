@@ -53,7 +53,7 @@ function knightMoves(initial: Coordinate, target: Coordinate): Coordinate[] {
 
     if (currentX === target[0] && currentY === target[1]) {
       let path = current.path;
-      console.log('You made it in %d move%s!', path.length, path.length > 1 ? 's': '');
+      console.log('You made it in %d move%s!', path.length - 1, path.length > 2 ? 's' : '');
       path.forEach(pos => console.log(pos));
       return current.path;
     }
@@ -75,6 +75,6 @@ function knightMoves(initial: Coordinate, target: Coordinate): Coordinate[] {
   }
   console.log('Path not found.')
   return [];
-} 
+}
 
-knightMoves([0,0], [3,3]);
+knightMoves([0, 0], [2, 1]);
