@@ -54,6 +54,20 @@ function knightMoves(initial: Coordinate, target: Coordinate): Coordinate[] {
     if (currentX === target[0] && currentY === target[1]) {
       return current.path;
     }
-    
+    for (const [xOffset, yOffset] of moves) {
+      const newX = currentX + xOffset;
+      const newY = currentY + yOffset;
+
+      if (newX < 0 || newX > 7 || newY < 0 || newY > 7) continue;
+
+      const key = `${newX},${newY}`;
+      if (visited.has(key)) continue;
+
+      visited.add(key);
+      searchQueue.enqueue({
+        coordinate: [newX, newY],
+        path: [...current.path, [newX, newY]]
+      });
+    }
   }
 } 
