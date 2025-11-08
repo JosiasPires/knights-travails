@@ -47,5 +47,13 @@ function knightMoves(initial: Coordinate, target: Coordinate): Coordinate[] {
 
   visited.add(initial.toString());
   searchQueue.enqueue({ coordinate: initial, path: [initial] });
+  while (!searchQueue.isEmpty()) {
+    const current = searchQueue.dequeue()!;
+    const [currentX, currentY] = current.coordinate;
 
+    if (currentX === target[0] && currentY === target[1]) {
+      return current.path;
+    }
+    
+  }
 } 
