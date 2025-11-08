@@ -1,4 +1,8 @@
 type Coordinate = [number, number];
+interface KnightNode {
+  coordinate: Coordinate;
+  path: Coordinate[];
+}
 
 class Queue<T> {
   private items: Record<number, T> = {};
@@ -38,10 +42,10 @@ function knightMoves(initial: Coordinate, target: Coordinate): Coordinate[] {
     [1, 2], [1, -2],
     [-1, 2], [-1, -2]
   ];
-  const searchQueue = new Queue<number[]>();
+  const searchQueue = new Queue<KnightNode>();
   const visited = new Set<string>();
 
   visited.add(initial.toString());
-  searchQueue.enqueue(initial);
+  searchQueue.enqueue({ coordinate: initial, path: [initial] });
 
 } 
