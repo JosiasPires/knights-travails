@@ -39,6 +39,9 @@ function knightMoves(initial: Coordinate, target: Coordinate): Coordinate[] {
     [-1, 2], [-1, -2]
   ];
   const searchQueue = new Queue<number[]>();
+  const visited = new Set<string>();
+
+  visited.add(initial.toString());
   searchQueue.enqueue(initial);
 
 } 
